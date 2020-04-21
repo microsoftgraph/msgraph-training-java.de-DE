@@ -1,115 +1,103 @@
 ---
-ms.openlocfilehash: 298c78d0626e16899de402b3e9b537c8b8386886
-ms.sourcegitcommit: 2af94da662c454e765b32edeb9406812e3732406
+ms.openlocfilehash: 381e4166f07e1dbc51c072645f17002e43f6cc16
+ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/13/2019
-ms.locfileid: "40018817"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43612019"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
-Öffnen Sie die Befehlszeilenschnittstelle (CLI) in einem Verzeichnis, in dem Sie das Projekt erstellen möchten. Führen Sie den folgenden Befehl aus, um ein neues Maven-Projekt zu erstellen.
+In diesem Abschnitt erstellen Sie eine grundlegende Java Console-app.
 
-```Shell
-mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.contoso -DartifactId=graphtutorial -Dversion=1.0-SNAPSHOT
-```
+1. Öffnen Sie die Befehlszeilenschnittstelle (CLI) in einem Verzeichnis, in dem Sie das Projekt erstellen möchten. Führen Sie den folgenden Befehl aus, um ein neues Gradle-Projekt zu erstellen.
 
-> [!IMPORTANT]
-> Sie können unterschiedliche Werte für die Gruppen-ID`DgroupId` (Parameter) und Artefakt-`DartifactId` ID (Parameter) eingeben, als die oben angegebenen Werte. Im Beispielcode in diesem Lernprogramm wird davon ausgegangen, dass die Gruppen-ID `com.contoso` verwendet wurde. Wenn Sie einen anderen Wert verwenden, müssen Sie in jedem `com.contoso` Beispielcode durch Ihre Gruppen-ID ersetzen.
+    ```Shell
+    gradle init --dsl groovy --test-framework junit --type java-application --project-name graphtutorial --package graphtutorial
+    ```
 
-Wenn Sie dazu aufgefordert werden, bestätigen Sie die Konfiguration, und warten Sie, bis das Projekt erstellt wurde. Nachdem das Projekt erstellt wurde, überprüfen Sie, ob es funktionsfähig ist, indem Sie die folgenden Befehle ausführen, um die app in ihrer CLI zu verpacken und auszuführen.
+1. Nachdem das Projekt erstellt wurde, überprüfen Sie, ob es funktionsfähig ist, indem Sie den folgenden Befehl ausführen, um die app in ihrer CLI auszuführen.
 
-```Shell
-mvn package
-java -cp target/graphtutorial-1.0-SNAPSHOT.jar com.contoso.App
-```
+    ```Shell
+    ./gradlew --console plain run
+    ```
 
-Wenn die APP funktioniert, sollte Sie ausgegeben `Hello World!`werden. Bevor Sie fortfahren, fügen Sie einige zusätzliche Abhängigkeiten hinzu, die Sie später verwenden werden.
+    Wenn die APP funktioniert, sollte Sie ausgegeben `Hello World.`werden.
+
+## <a name="install-dependencies"></a>Installieren von Abhängigkeiten
+
+Bevor Sie fortfahren, fügen Sie einige zusätzliche Abhängigkeiten hinzu, die Sie später verwenden werden.
 
 - [Microsoft Authentication Library (MSAL) für Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) , um den Benutzer zu authentifizieren und Zugriffstoken zu erwerben.
 - [Microsoft Graph SDK für Java](https://github.com/microsoftgraph/msgraph-sdk-java) , um Anrufe an Microsoft Graph zu tätigen.
 - [SLF4J NOP Bindung](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) zum Unterdrücken der Protokollierung von MSAL.
 
-Öffnen Sie **./graphtutorial/Pom.XML**. Fügen Sie das folgende innerhalb `<dependencies>` des-Elements hinzu.
+1. Öffnen Sie **./Build.gradle**. Aktualisieren Sie `dependencies` den Abschnitt, um diese Abhängigkeiten hinzuzufügen.
 
-```xml
-<dependency>
-  <groupId>org.slf4j</groupId>
-  <artifactId>slf4j-nop</artifactId>
-  <version>1.8.0-beta4</version>
-</dependency>
+    :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="DependenciesSnippet" highlight="7-9":::
 
-<dependency>
-  <groupId>com.microsoft.graph</groupId>
-  <artifactId>microsoft-graph</artifactId>
-  <version>1.6.0</version>
-</dependency>
+1. Fügen Sie am Ende von **./Build.gradle**Folgendes hinzu.
 
-<dependency>
-  <groupId>com.microsoft.azure</groupId>
-  <artifactId>msal4j</artifactId>
-  <version>1.1.0</version>
-</dependency>
-```
+    :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="StandardInputSnippet":::
 
-Wenn Sie das Projekt das nächste Mal erstellen, werden diese Abhängigkeiten von Maven heruntergeladen.
+Wenn Sie das Projekt das nächste Mal erstellen, werden diese Abhängigkeiten von Gradle heruntergeladen.
 
-## <a name="design-the-app"></a>Entwerfen der APP
+## <a name="design-the-app"></a>Entwerfen der App
 
-Öffnen Sie die Datei **./graphtutorial/src/main/java/com/Contoso/app.Java** , und ersetzen Sie den Inhalt durch Folgendes.
+1. Öffnen Sie die Datei **./src/main/java/graphtutorial/app.Java** , und ersetzen Sie den Inhalt durch Folgendes.
 
-```java
-package com.contoso;
+    ```java
+    package graphtutorial;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+    import java.util.InputMismatchException;
+    import java.util.Scanner;
 
-/**
- * Graph Tutorial
- *
- */
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Java Graph Tutorial");
-        System.out.println();
+    /**
+     * Graph Tutorial
+     *
+     */
+    public class App {
+        public static void main(String[] args) {
+            System.out.println("Java Graph Tutorial");
+            System.out.println();
 
-        Scanner input = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
 
-        int choice = -1;
+            int choice = -1;
 
-        while (choice != 0) {
-            System.out.println("Please choose one of the following options:");
-            System.out.println("0. Exit");
-            System.out.println("1. Display access token");
-            System.out.println("2. List calendar events");
+            while (choice != 0) {
+                System.out.println("Please choose one of the following options:");
+                System.out.println("0. Exit");
+                System.out.println("1. Display access token");
+                System.out.println("2. List calendar events");
 
-            try {
-                choice = input.nextInt();
-            } catch (InputMismatchException ex) {
-                // Skip over non-integer input
-                input.nextLine();
+                try {
+                    choice = input.nextInt();
+                } catch (InputMismatchException ex) {
+                    // Skip over non-integer input
+                    input.nextLine();
+                }
+
+                // Process user choice
+                switch(choice) {
+                    case 0:
+                        // Exit the program
+                        System.out.println("Goodbye...");
+                        break;
+                    case 1:
+                        // Display access token
+                        break;
+                    case 2:
+                        // List the calendar
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
+                }
             }
 
-            // Process user choice
-            switch(choice) {
-                case 0:
-                    // Exit the program
-                    System.out.println("Goodbye...");
-                    break;
-                case 1:
-                    // Display access token
-                    break;
-                case 2:
-                    // List the calendar
-                    break;
-                default:
-                    System.out.println("Invalid choice");
-            }
+            input.close();
         }
-
-        input.close();
     }
-}
-```
+    ```
 
-Dadurch wird ein einfaches Menü implementiert, und die Auswahl des Benutzers wird von der Befehlszeile aus gelesen.
+    Dadurch wird ein einfaches Menü implementiert, und die Auswahl des Benutzers wird von der Befehlszeile aus gelesen.

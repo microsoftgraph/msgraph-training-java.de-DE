@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9b54a56ae0a6d97e1553f34449b36fe5ddccd318
-ms.sourcegitcommit: 24c4290a6d28db5c5bde873d01f49b9de0c8eedb
+ms.openlocfilehash: cb52949a177640cd537cc6f8dffff02ea074fb36
+ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "37045858"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43612026"
 ---
 # <a name="microsoft-graph-training-module---build-java-apps-with-the-microsoft-graph-java-sdk"></a>Microsoft Graph-Schulungsmodul – Erstellen von Java-apps mit dem Microsoft Graph Java SDK
 
@@ -16,19 +16,11 @@ In dieser Übungseinheit erstellen Sie eine Konsolenanwendung mithilfe der Micro
 
 - [Java Microsoft Graph-Lernprogramm](https://docs.microsoft.com/graph/tutorials/java)
 
-## <a name="demos"></a>Demos
-
-Das [Demos](./demos) -Verzeichnis in diesem Repository enthält Kopien des Projekts, die dem Ausführen einzelner Abschnitte des Lernprogramms entsprechen. Wenn Sie lediglich einen bestimmten Abschnitt des Lernprogramms Demo ausführen möchten, können Sie mit der Version aus dem vorherigen Abschnitt beginnen.
-
-- [01-Create-App](demos/01-create-app): abgeschlossen [Erstellen einer Java Console-App](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=1)
-- [02-Add-Aad-auth](demos/02-add-aad-auth): abgeschlossene [Add Azure AD-Authentifizierung](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=3)
-- [03-Add-MSGraph](demos/03-add-msgraph): abgeschlossene [Abrufen von Kalenderdaten](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=4)
-
 ## <a name="completed-sample"></a>Abgeschlossenes Beispiel
 
 Wenn Sie das fertige Beispiel nur generieren möchten, indem Sie dieser Übungseinheit folgen, können Sie es hier finden.
 
-- [Fertig gestelltes Projekt](demos/03-add-msgraph)
+- [Fertig gestelltes Projekt](demo)
 
 ## <a name="disclaimer"></a>Verzichtserklärung
 
