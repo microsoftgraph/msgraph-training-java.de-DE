@@ -1,35 +1,27 @@
 ---
-ms.openlocfilehash: 9b54a56ae0a6d97e1553f34449b36fe5ddccd318
-ms.sourcegitcommit: 24c4290a6d28db5c5bde873d01f49b9de0c8eedb
+ms.openlocfilehash: cb52949a177640cd537cc6f8dffff02ea074fb36
+ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "37045858"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43612026"
 ---
-# <a name="microsoft-graph-training-module---build-java-apps-with-the-microsoft-graph-java-sdk"></a><span data-ttu-id="f7bd1-101">Microsoft Graph-Schulungsmodul – Erstellen von Java-apps mit dem Microsoft Graph Java SDK</span><span class="sxs-lookup"><span data-stu-id="f7bd1-101">Microsoft Graph Training Module - Build Java apps with the Microsoft Graph Java SDK</span></span>
+# <a name="microsoft-graph-training-module---build-java-apps-with-the-microsoft-graph-java-sdk"></a><span data-ttu-id="3cfc3-101">Microsoft Graph-Schulungsmodul – Erstellen von Java-apps mit dem Microsoft Graph Java SDK</span><span class="sxs-lookup"><span data-stu-id="3cfc3-101">Microsoft Graph Training Module - Build Java apps with the Microsoft Graph Java SDK</span></span>
 
-<span data-ttu-id="f7bd1-102">In diesem Modul erfahren Sie, wie Sie mit dem Microsoft Graph-SDK zusammenarbeiten, um auf Daten in Office 365 durch Erstellen von Java-Anwendungen zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="f7bd1-102">This module will introduce you to working with the Microsoft Graph SDK to access data in Office 365 by building Java applications.</span></span>
+<span data-ttu-id="3cfc3-102">In diesem Modul erfahren Sie, wie Sie mit dem Microsoft Graph-SDK zusammenarbeiten, um auf Daten in Office 365 durch Erstellen von Java-Anwendungen zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="3cfc3-102">This module will introduce you to working with the Microsoft Graph SDK to access data in Office 365 by building Java applications.</span></span>
 
-## <a name="lab---build-java-apps-with-the-microsoft-graph-java-sdk"></a><span data-ttu-id="f7bd1-103">Lab-Build Java-apps mit dem Microsoft Graph Java SDK</span><span class="sxs-lookup"><span data-stu-id="f7bd1-103">Lab - Build Java apps with the Microsoft Graph Java SDK</span></span>
+## <a name="lab---build-java-apps-with-the-microsoft-graph-java-sdk"></a><span data-ttu-id="3cfc3-103">Lab-Build Java-apps mit dem Microsoft Graph Java SDK</span><span class="sxs-lookup"><span data-stu-id="3cfc3-103">Lab - Build Java apps with the Microsoft Graph Java SDK</span></span>
 
-<span data-ttu-id="f7bd1-104">In dieser Übungseinheit erstellen Sie eine Konsolenanwendung mithilfe der Microsoft-Authentifizierungsbibliothek (MSAL), um mithilfe von Microsoft Graph auf Daten in Office 365 zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="f7bd1-104">In this lab you will create a console application using the Microsoft Authentication Library (MSAL) to access data in Office 365 using the Microsoft Graph.</span></span>
+<span data-ttu-id="3cfc3-104">In dieser Übungseinheit erstellen Sie eine Konsolenanwendung mithilfe der Microsoft-Authentifizierungsbibliothek (MSAL), um mithilfe von Microsoft Graph auf Daten in Office 365 zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="3cfc3-104">In this lab you will create a console application using the Microsoft Authentication Library (MSAL) to access data in Office 365 using the Microsoft Graph.</span></span>
 
-- [<span data-ttu-id="f7bd1-105">Java Microsoft Graph-Lernprogramm</span><span class="sxs-lookup"><span data-stu-id="f7bd1-105">Java Microsoft Graph tutorial</span></span>](https://docs.microsoft.com/graph/tutorials/java)
+- [<span data-ttu-id="3cfc3-105">Java Microsoft Graph-Lernprogramm</span><span class="sxs-lookup"><span data-stu-id="3cfc3-105">Java Microsoft Graph tutorial</span></span>](https://docs.microsoft.com/graph/tutorials/java)
 
-## <a name="demos"></a><span data-ttu-id="f7bd1-106">Demos</span><span class="sxs-lookup"><span data-stu-id="f7bd1-106">Demos</span></span>
+## <a name="completed-sample"></a><span data-ttu-id="3cfc3-106">Abgeschlossenes Beispiel</span><span class="sxs-lookup"><span data-stu-id="3cfc3-106">Completed sample</span></span>
 
-<span data-ttu-id="f7bd1-107">Das [Demos](./demos) -Verzeichnis in diesem Repository enthält Kopien des Projekts, die dem Ausführen einzelner Abschnitte des Lernprogramms entsprechen.</span><span class="sxs-lookup"><span data-stu-id="f7bd1-107">The [demos](./demos) directory in this repository contains copies of the project that correspond to completing individual sections of the tutorial.</span></span> <span data-ttu-id="f7bd1-108">Wenn Sie lediglich einen bestimmten Abschnitt des Lernprogramms Demo ausführen möchten, können Sie mit der Version aus dem vorherigen Abschnitt beginnen.</span><span class="sxs-lookup"><span data-stu-id="f7bd1-108">If you just want to demo a particular section of the tutorial, you can start with the version from the previous section.</span></span>
+<span data-ttu-id="3cfc3-107">Wenn Sie das fertige Beispiel nur generieren möchten, indem Sie dieser Übungseinheit folgen, können Sie es hier finden.</span><span class="sxs-lookup"><span data-stu-id="3cfc3-107">If you just want the completed sample generated by following this lab, you can find it here.</span></span>
 
-- <span data-ttu-id="f7bd1-109">[01-Create-App](demos/01-create-app): abgeschlossen [Erstellen einer Java Console-App](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=1)</span><span class="sxs-lookup"><span data-stu-id="f7bd1-109">[01-create-app](demos/01-create-app): Completed [Create a Java console app](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=1)</span></span>
-- <span data-ttu-id="f7bd1-110">[02-Add-Aad-auth](demos/02-add-aad-auth): abgeschlossene [Add Azure AD-Authentifizierung](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=3)</span><span class="sxs-lookup"><span data-stu-id="f7bd1-110">[02-add-aad-auth](demos/02-add-aad-auth): Completed [Add Azure AD authentication](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=3)</span></span>
-- <span data-ttu-id="f7bd1-111">[03-Add-MSGraph](demos/03-add-msgraph): abgeschlossene [Abrufen von Kalenderdaten](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=4)</span><span class="sxs-lookup"><span data-stu-id="f7bd1-111">[03-add-msgraph](demos/03-add-msgraph): Completed [Get calendar data](https://docs.microsoft.com/graph/tutorials/java?tutorial-step=4)</span></span>
+- [<span data-ttu-id="3cfc3-108">Fertig gestelltes Projekt</span><span class="sxs-lookup"><span data-stu-id="3cfc3-108">Completed project</span></span>](demo)
 
-## <a name="completed-sample"></a><span data-ttu-id="f7bd1-112">Abgeschlossenes Beispiel</span><span class="sxs-lookup"><span data-stu-id="f7bd1-112">Completed sample</span></span>
+## <a name="disclaimer"></a><span data-ttu-id="3cfc3-109">Verzichtserklärung</span><span class="sxs-lookup"><span data-stu-id="3cfc3-109">Disclaimer</span></span>
 
-<span data-ttu-id="f7bd1-113">Wenn Sie das fertige Beispiel nur generieren möchten, indem Sie dieser Übungseinheit folgen, können Sie es hier finden.</span><span class="sxs-lookup"><span data-stu-id="f7bd1-113">If you just want the completed sample generated by following this lab, you can find it here.</span></span>
-
-- [<span data-ttu-id="f7bd1-114">Fertig gestelltes Projekt</span><span class="sxs-lookup"><span data-stu-id="f7bd1-114">Completed project</span></span>](demos/03-add-msgraph)
-
-## <a name="disclaimer"></a><span data-ttu-id="f7bd1-115">Verzichtserklärung</span><span class="sxs-lookup"><span data-stu-id="f7bd1-115">Disclaimer</span></span>
-
-<span data-ttu-id="f7bd1-116">**Dieser Code wird ohne jegliche ausdrückliche oder implizite _Gewährleistung bereit_ gestellt, einschließlich impliziter Garantien für die Eignung für einen bestimmten Zweck, die Marktgängigkeit oder die Nichtverletzung.**</span><span class="sxs-lookup"><span data-stu-id="f7bd1-116">**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**</span></span>
+<span data-ttu-id="3cfc3-110">**Dieser Code wird ohne jegliche ausdrückliche oder implizite _Gewährleistung bereit_ gestellt, einschließlich impliziter Garantien für die Eignung für einen bestimmten Zweck, die Marktgängigkeit oder die Nichtverletzung.**</span><span class="sxs-lookup"><span data-stu-id="3cfc3-110">**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**</span></span>
