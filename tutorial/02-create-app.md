@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 381e4166f07e1dbc51c072645f17002e43f6cc16
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: 72936993d940cdfb86c864a6ffc543ed466127d1
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612019"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661081"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -22,7 +22,7 @@ In diesem Abschnitt erstellen Sie eine grundlegende Java Console-app.
     ./gradlew --console plain run
     ```
 
-    Wenn die APP funktioniert, sollte Sie ausgegeben `Hello World.`werden.
+    Wenn die APP funktioniert, sollte Sie ausgegeben werden `Hello World.` .
 
 ## <a name="install-dependencies"></a>Installieren von Abhängigkeiten
 
@@ -32,11 +32,11 @@ Bevor Sie fortfahren, fügen Sie einige zusätzliche Abhängigkeiten hinzu, die 
 - [Microsoft Graph SDK für Java](https://github.com/microsoftgraph/msgraph-sdk-java) , um Anrufe an Microsoft Graph zu tätigen.
 - [SLF4J NOP Bindung](https://mvnrepository.com/artifact/org.slf4j/slf4j-nop) zum Unterdrücken der Protokollierung von MSAL.
 
-1. Öffnen Sie **./Build.gradle**. Aktualisieren Sie `dependencies` den Abschnitt, um diese Abhängigkeiten hinzuzufügen.
+1. Öffnen Sie **./Build.gradle**. Aktualisieren `dependencies` Sie den Abschnitt, um diese Abhängigkeiten hinzuzufügen.
 
     :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="DependenciesSnippet" highlight="7-9":::
 
-1. Fügen Sie am Ende von **./Build.gradle**Folgendes hinzu.
+1. Fügen Sie am Ende von **./Build.gradle** Folgendes hinzu.
 
     :::code language="gradle" source="../demo/graphtutorial/build.gradle" id="StandardInputSnippet":::
 
@@ -69,14 +69,16 @@ Wenn Sie das Projekt das nächste Mal erstellen, werden diese Abhängigkeiten vo
                 System.out.println("Please choose one of the following options:");
                 System.out.println("0. Exit");
                 System.out.println("1. Display access token");
-                System.out.println("2. List calendar events");
+                System.out.println("2. View this week's calendar");
+                System.out.println("3. Add an event");
 
                 try {
                     choice = input.nextInt();
                 } catch (InputMismatchException ex) {
                     // Skip over non-integer input
-                    input.nextLine();
                 }
+
+                input.nextLine();
 
                 // Process user choice
                 switch(choice) {
@@ -89,6 +91,9 @@ Wenn Sie das Projekt das nächste Mal erstellen, werden diese Abhängigkeiten vo
                         break;
                     case 2:
                         // List the calendar
+                        break;
+                    case 3:
+                        // Create a new event
                         break;
                     default:
                         System.out.println("Invalid choice");

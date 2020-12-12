@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f13ee9baa26bb487d5b50bd966e40cee9ba64378
-ms.sourcegitcommit: 22ec2c0e4803b82c9d360f3609f8b15ba5d017ca
+ms.openlocfilehash: 3b1e366ded1e9d59f048eec8da23a686a121dedf
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "43940476"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661074"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -23,7 +23,7 @@ Sie sollten auch über ein persönliches Microsoft-Konto mit einem Postfach auf 
 - Sie können sich [für das Office 365 Entwicklerprogramm registrieren](https://developer.microsoft.com/office/dev-program) , um ein kostenloses Office 365-Abonnement zu erhalten.
 
 > [!NOTE]
-> Dieses Lernprogramm wurde mit der openjdk-Version 14.0.0.36 und Gradle 6,3 geschrieben. Die Schritte in diesem Leitfaden funktionieren möglicherweise mit anderen Versionen, jedoch nicht getestet.
+> Dieses Lernprogramm wurde mit der openjdk-Version 14.0.0.36 und Gradle 6.7.1 geschrieben. Die Schritte in diesem Leitfaden funktionieren möglicherweise mit anderen Versionen, jedoch nicht getestet.
 
 ## <a name="feedback"></a>Feedback
 

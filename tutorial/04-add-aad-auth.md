@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3e4d7f11c89947da29873c85ab2808279c94265a
-ms.sourcegitcommit: 189f87d879c57b11992e7bc75580b4c69e014122
+ms.openlocfilehash: 4c04317462240ff0696ac1381fae886481db7847
+ms.sourcegitcommit: eb935a250f8531b04a42710356072b80d46ee3a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43612061"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49661067"
 ---
 <!-- markdownlint-disable MD002 MD041 -->
 
@@ -12,23 +12,27 @@ In dieser Übung erweitern Sie die Anwendung aus der vorherigen Übung, um die A
 
 1. Erstellen Sie im Verzeichnis **./src/main/resources** ein neues Verzeichnis mit dem Namen **graphtutorial** .
 
-1. Erstellen Sie eine neue Datei im Verzeichnis **./src/main/resources/graphtutorial** mit dem Namen **oAuth. Properties**, und fügen Sie den folgenden Text in die Datei ein.
+1. Erstellen Sie eine neue Datei im Verzeichnis **./src/main/resources/graphtutorial** mit dem Namen **oAuth. Properties**, und fügen Sie den folgenden Text in die Datei ein. Ersetzen `YOUR_APP_ID_HERE` Sie durch die Anwendungs-ID, die Sie im Azure-Portal erstellt haben.
 
     :::code language="ini" source="../demo/graphtutorial/src/main/resources/graphtutorial/oAuth.properties.example":::
 
-    Ersetzen `YOUR_APP_ID_HERE` Sie durch die Anwendungs-ID, die Sie im Azure-Portal erstellt haben.
+    Der Wert von `app.scopes` enthält die Berechtigungs Bereiche, die die Anwendung benötigt.
+
+    - **User. Read** ermöglicht der APP den Zugriff auf das Profil des Benutzers.
+    - **Mailbox Settings. Read** ermöglicht der APP den Zugriff auf Einstellungen aus dem Postfach des Benutzers, einschließlich der konfigurierten Zeitzone des Benutzers.
+    - Mit Calendars **. ReadWrite** kann die APP den Kalender des Benutzers auflisten und dem Kalender neue Ereignisse hinzufügen.
 
     > [!IMPORTANT]
     > Wenn Sie die Quellcodeverwaltung wie git verwenden, wäre es jetzt ein guter Zeitpunkt, die Datei **oAuth. Properties** aus der Quellcodeverwaltung auszuschließen, um unbeabsichtigtes Auslaufen ihrer APP-ID zu vermeiden.
 
-1. Öffnen Sie **app. Java** , und fügen `import` Sie die folgenden Anweisungen hinzu.
+1. Öffnen Sie **app. Java** , und fügen Sie die folgenden `import` Anweisungen hinzu.
 
     ```java
     import java.io.IOException;
     import java.util.Properties;
     ```
 
-1. Fügen Sie den folgenden Code direkt vor `Scanner input = new Scanner(System.in);` der Codezeile ein, um die Datei **oAuth. Properties** zu laden.
+1. Fügen Sie den folgenden Code direkt vor der `Scanner input = new Scanner(System.in);` Codezeile ein, um die Datei **oAuth. Properties** zu laden.
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/App.java" id="LoadSettingsSnippet":::
 
@@ -38,7 +42,7 @@ In dieser Übung erweitern Sie die Anwendung aus der vorherigen Übung, um die A
 
     :::code language="java" source="../demo/graphtutorial/src/main/java/graphtutorial/Authentication.java" id="AuthenticationSnippet":::
 
-1. Fügen Sie in **app. Java**den folgenden Code unmittelbar vor der `Scanner input = new Scanner(System.in);` Codezeile ein, um ein Zugriffstoken abzurufen.
+1. Fügen Sie in **app. Java** den folgenden Code unmittelbar vor der `Scanner input = new Scanner(System.in);` Codezeile ein, um ein Zugriffstoken abzurufen.
 
     ```java
     // Get an access token
@@ -46,7 +50,7 @@ In dieser Übung erweitern Sie die Anwendung aus der vorherigen Übung, um die A
     final String accessToken = Authentication.getUserAccessToken(appScopes);
     ```
 
-1. Fügen Sie die folgende Reihe nach `// Display access token` dem Kommentar hinzu.
+1. Fügen Sie die folgende Reihe nach dem `// Display access token` Kommentar hinzu.
 
     ```java
     System.out.println("Access token: " + accessToken);
@@ -61,3 +65,6 @@ In dieser Übung erweitern Sie die Anwendung aus der vorherigen Übung, um die A
     ```
 
 1. Öffnen Sie einen Browser, und navigieren Sie zu der angezeigten URL. Geben Sie den bereitgestellten Code ein und melden Sie sich an. Kehren Sie nach Abschluss zurück zur Anwendung, und wählen Sie die **1 aus. Option Zugriffstoken anzeigen** , um das Zugriffstoken anzuzeigen.
+
+> [!TIP]
+> Zugriffstoken für Microsoft work-oder School-Konten können zu Problembehandlungszwecken unter analysiert werden [https://jwt.ms](https://jwt.ms) . Zugriffstoken für persönliche Microsoft-Konten verwenden ein proprietäres Format und können nicht analysiert werden.
